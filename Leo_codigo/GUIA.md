@@ -32,7 +32,7 @@ El término de cobertura existe porque, si solo mides el error donde pintaste, a
 ```
 f = MSE(lienzo + pinceladas, objetivo)/255²  +  λ_flujo · mean|sin(θ_pincelada − θ_flujo)| · 1e-3
 ```
-El segundo término es el **"estilo Van Gogh"**. `θ_flujo` es la dirección perpendicular al gradiente de la imagen (operador de diferencias tipo Sobel), es decir, la dirección de los contornos. Premiar las pinceladas que siguen esos contornos produce los trazos arremolinados característicos.
+El segundo término busca aportar el **"estilo Van Gogh"**. `θ_flujo` es la dirección perpendicular al gradiente de la imagen (calculado con diferencias centrales, no con Sobel), es decir, la dirección de los contornos. La hipótesis es que premiar las pinceladas que siguen esos contornos acerca los trazos a los de Van Gogh. **Todavía no está comprobado:** falta comparar λ_flujo = 0 contra λ_flujo > 0. Además, `vanGogh2.jpeg` ya tiene ese estilo, así que parte de lo que se ve viene de la imagen objetivo.
 
 **Operadores (Engelbrecht, cap. 9, AG de codificación real):**
 - Inicialización heurística: el color se toma del píxel objetivo y el ángulo del campo de flujo.
@@ -42,14 +42,17 @@ El segundo término es el **"estilo Van Gogh"**. `θ_flujo` es la dirección per
 - Elitismo de 1.
 
 ## 3. Cómo correrlo
-```bash
+Instalación (una sola vez, con el entorno activado): `python -m pip install -r requirements.txt` desde la raíz del repo.
+
+```powershell
+& "$env:USERPROFILE.venvsoptimizacionScriptsActivate.ps1"
 cd Leo_codigo
-python3 ea_vangogh.py ../Angie_codigo/vanGogh2.jpeg --pinceladas 800 --salida salida
+python ea_vangogh.py ..Angie_codigoanGogh2.jpeg --pinceladas 800 --salida salida_local
 ```
 Parámetros: `--K`, `--poblacion`, `--generaciones`, `--lambda_flujo`, `--ancho`, `--semilla`.
-Salidas: `resultado.png`, `progreso_XXXX.png`, `fitness.csv` y `comparacion.png` (objetivo | 85 pinceladas | 800 pinceladas).
+Salidas: `objetivo.png`, `resultado.png`, `progreso_XXXX.png` y `fitness.csv`. El script no genera `salida/comparacion.png`: esa imagen se armó aparte (objetivo | 85 pinceladas | 800 pinceladas).
 
-Resultado con 800 pinceladas a 200 px de ancho: ~38 s de ejecución, fitness de 0.0129 (≈ etapa 85) a 0.0109.
+Resultado con 800 pinceladas a 200 px de ancho: ~55 s en una ASUS TUF A16 (solo CPU), con fitness de 0.0209 (85 pinceladas) a 0.0109 (800 pinceladas). Cada valor es el fitness del mejor individuo de su etapa. Se distinguen las masas de color y la silueta de la oreja del gato, pero los rostros todavía no se reconocen.
 
 ## 4. Ideas para seguir (avance propio / experimentos para el reporte)
 1. **Comparar algoritmos:** AG vs Estrategia Evolutiva (1+λ) con σ autoadaptativo vs Programación Evolutiva. Todos usan la misma función de fitness.

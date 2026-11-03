@@ -1,6 +1,6 @@
 """
 Algoritmo Evolutivo para "pintar" una imagen con pinceladas estilo Van Gogh.
-Referencia: Engelbrecht, Computational Intelligence, 2a ed., Cap. 8-9 (GA / EP / ES).
+Referencia: Engelbrecht, Computational Intelligence, 2a ed., Cap. 8-9 (computacion evolutiva y AG).
 
 IDEA GENERAL
 ------------
@@ -44,7 +44,7 @@ def cargar_objetivo(ruta, ancho_max):
 
 
 def campo_de_flujo(objetivo):
-    """Angulo de la linea de flujo en cada pixel = perpendicular al gradiente (Sobel)."""
+    """Angulo de la linea de flujo en cada pixel = perpendicular al gradiente (diferencias centrales)."""
     gris = Image.fromarray(objetivo.astype(np.uint8)).convert("L").filter(ImageFilter.GaussianBlur(3))
     g = np.asarray(gris, dtype=np.float32)
     gx = np.zeros_like(g); gy = np.zeros_like(g)
