@@ -45,9 +45,9 @@ El segundo término busca aportar el **"estilo Van Gogh"**. `θ_flujo` es la dir
 Instalación (una sola vez, con el entorno activado): `python -m pip install -r requirements.txt` desde la raíz del repo.
 
 ```powershell
-& "$env:USERPROFILE.venvsoptimizacionScriptsActivate.ps1"
+& "$env:USERPROFILE\.venvs\optimizacion\Scripts\Activate.ps1"
 cd Leo_codigo
-python ea_vangogh.py ..Angie_codigoanGogh2.jpeg --pinceladas 800 --salida salida_local
+python ea_vangogh.py ..\Angie_codigo\vanGogh2.jpeg --pinceladas 800 --salida salida_local
 ```
 Parámetros: `--K`, `--poblacion`, `--generaciones`, `--lambda_flujo`, `--ancho`, `--semilla`.
 Salidas: `objetivo.png`, `resultado.png`, `progreso_XXXX.png` y `fitness.csv`. El script no genera `salida/comparacion.png`: esa imagen se armó aparte (objetivo | 85 pinceladas | 800 pinceladas).
