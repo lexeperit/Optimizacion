@@ -1,0 +1,22 @@
+{
+  "estilo": "Van Gogh",
+  "pinceladas": 20000,
+  "etapas": 21749,
+  "rechazadas": 1749,
+  "evaluaciones_fitness": 4523792,
+  "mse_normalizado_vs_objetivo": 0.004182725204172589,
+  "psnr_db_vs_objetivo": 23.78540666672459,
+  "psnr_db_vs_foto_original": 21.705129335108303,
+  "ssim_vs_objetivo": 0.7319010166077786,
+  "cobertura": 0.998545966228893,
+  "desalineacion_flujo": 0.006510023877219212,
+  "tiempo_s": 592.6505906581879,
+  "resolucion_trabajo": [
+    400,
+    533
+  ],
+  "resolucion_salida": [
+    1200,
+    1599
+  ]
+}

@@ -1,0 +1,12 @@
+E1_aleatoria_s0              MSE=0.00516 PSNR=22.87 SSIM=0.656 desal=0.166 t=57s
+E1_AG_s0                     MSE=0.00462 PSNR=23.35 SSIM=0.699 desal=0.200 t=74s
+E1_aleatoria_s1              MSE=0.00519 PSNR=22.85 SSIM=0.656 desal=0.171 t=56s
+E1_AG_s1                     MSE=0.00459 PSNR=23.38 SSIM=0.702 desal=0.191 t=74s
+E1_aleatoria_s2              MSE=0.00515 PSNR=22.88 SSIM=0.659 desal=0.163 t=58s
+E1_AG_s2                     MSE=0.00464 PSNR=23.34 SSIM=0.699 desal=0.200 t=74s
+E2_vangogh_lambda0.0         MSE=0.00635 PSNR=21.98 SSIM=0.654 desal=0.064 t=74s
+E2_vangogh_lambda0.04        MSE=0.00645 PSNR=21.91 SSIM=0.651 desal=0.017 t=76s
+E3_K3                        MSE=0.00760 PSNR=21.19 SSIM=0.558 desal=0.278 t=59s
+E2_vangogh_lambda0.15        MSE=0.00662 PSNR=21.79 SSIM=0.645 desal=0.004 t=77s
+E1 AG: MSE = 0.00462 +- 0.00002
+E1 aleatoria: MSE = 0.00517 +- 0.00002

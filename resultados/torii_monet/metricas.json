@@ -1,0 +1,22 @@
+{
+  "estilo": "Monet",
+  "pinceladas": 20000,
+  "etapas": 25656,
+  "rechazadas": 5656,
+  "evaluaciones_fitness": 5336448,
+  "mse_normalizado_vs_objetivo": 0.0007413580881326723,
+  "psnr_db_vs_objetivo": 31.299719699752096,
+  "psnr_db_vs_foto_original": 22.714452115888037,
+  "ssim_vs_objetivo": 0.8865920967173785,
+  "cobertura": 0.9996529080675423,
+  "desalineacion_flujo": 0.14074693518255674,
+  "tiempo_s": 665.9893136024475,
+  "resolucion_trabajo": [
+    400,
+    533
+  ],
+  "resolucion_salida": [
+    1200,
+    1599
+  ]
+}

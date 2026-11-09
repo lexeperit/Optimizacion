@@ -1,0 +1,15 @@
+# Salidas locales regenerables
+Leo_codigo/salida_local/
+pintor_evolutivo/salida_local/
+pintor_evolutivo/salida_notebook/
+**/__pycache__/
+.ipynb_checkpoints/
+reporte/*.aux
+reporte/*.log
+reporte/*.out
+reporte/*.toc
+reporte/*.bbl
+reporte/*.blg
+reporte/*.synctex.gz
+reporte/*.fls
+reporte/*.fdb_latexmk

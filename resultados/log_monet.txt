@@ -1,0 +1,13 @@
+Estilo: Monet | trabajo 400x533 px | salida 1200x1599 px | 20000 pinceladas
+pinceladas=    25  etapa=    25  MSE=0.03107  PSNR=15.08 dB  cobertura=0.25  largo= 39.7px  rechazadas=0  t=1s
+pinceladas=    50  etapa=    50  MSE=0.02323  PSNR=16.34 dB  cobertura=0.47  largo= 39.5px  rechazadas=0  t=2s
+pinceladas=   100  etapa=   100  MSE=0.01521  PSNR=18.18 dB  cobertura=0.67  largo= 39.1px  rechazadas=0  t=4s
+pinceladas=   200  etapa=   200  MSE=0.01008  PSNR=19.96 dB  cobertura=0.83  largo= 38.4px  rechazadas=0  t=8s
+pinceladas=   400  etapa=   402  MSE=0.00709  PSNR=21.49 dB  cobertura=0.94  largo= 37.3px  rechazadas=2  t=15s
+pinceladas=   800  etapa=   833  MSE=0.00508  PSNR=22.94 dB  cobertura=0.98  largo= 35.4px  rechazadas=33  t=29s
+pinceladas=  1600  etapa=  1832  MSE=0.00368  PSNR=24.34 dB  cobertura=0.99  largo= 32.3px  rechazadas=232  t=60s
+pinceladas=  3200  etapa=  4160  MSE=0.00267  PSNR=25.74 dB  cobertura=1.00  largo= 27.6px  rechazadas=960  t=131s
+pinceladas=  6400  etapa=  9043  MSE=0.00185  PSNR=27.33 dB  cobertura=1.00  largo= 20.9px  rechazadas=2643  t=266s
+pinceladas= 12800  etapa= 17365  MSE=0.00114  PSNR=29.45 dB  cobertura=1.00  largo= 13.0px  rechazadas=4565  t=475s
+pinceladas= 20000  etapa= 25656  MSE=0.00074  PSNR=31.30 dB  cobertura=1.00  largo=  8.0px  rechazadas=5656  t=666s
+Listo -> /home/user/Optimizacion/resultados/torii_monet

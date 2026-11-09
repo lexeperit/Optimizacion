@@ -1,0 +1,3 @@
+E1b_aleatoria_mismo_tiempo   MSE=0.00496 PSNR=23.04 SSIM=0.667 desal=0.177 t=73s
+E1 AG: MSE = 0.00462 +- 0.00002
+E1 aleatoria: MSE = 0.00517 +- 0.00002
