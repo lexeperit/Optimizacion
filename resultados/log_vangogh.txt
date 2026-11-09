@@ -1,0 +1,13 @@
+Estilo: Van Gogh | trabajo 400x533 px | salida 1200x1599 px | 20000 pinceladas
+pinceladas=    25  etapa=    25  MSE=0.04903  PSNR=13.10 dB  cobertura=0.29  largo= 62.8px  rechazadas=0  t=1s
+pinceladas=    50  etapa=    50  MSE=0.03917  PSNR=14.07 dB  cobertura=0.44  largo= 62.0px  rechazadas=0  t=3s
+pinceladas=   100  etapa=   100  MSE=0.02912  PSNR=15.36 dB  cobertura=0.64  largo= 60.7px  rechazadas=0  t=5s
+pinceladas=   200  etapa=   200  MSE=0.02209  PSNR=16.56 dB  cobertura=0.81  largo= 58.7px  rechazadas=0  t=9s
+pinceladas=   400  etapa=   402  MSE=0.01808  PSNR=17.43 dB  cobertura=0.88  largo= 55.6px  rechazadas=2  t=18s
+pinceladas=   800  etapa=   826  MSE=0.01508  PSNR=18.21 dB  cobertura=0.94  largo= 50.9px  rechazadas=26  t=34s
+pinceladas=  1600  etapa=  1738  MSE=0.01261  PSNR=18.99 dB  cobertura=0.97  largo= 44.1px  rechazadas=138  t=66s
+pinceladas=  3200  etapa=  3644  MSE=0.01057  PSNR=19.76 dB  cobertura=0.98  largo= 34.9px  rechazadas=444  t=128s
+pinceladas=  6400  etapa=  7345  MSE=0.00826  PSNR=20.83 dB  cobertura=0.99  largo= 23.9px  rechazadas=945  t=235s
+pinceladas= 12800  etapa= 14283  MSE=0.00568  PSNR=22.46 dB  cobertura=1.00  largo= 12.9px  rechazadas=1483  t=414s
+pinceladas= 20000  etapa= 21749  MSE=0.00418  PSNR=23.79 dB  cobertura=1.00  largo=  7.2px  rechazadas=1749  t=593s
+Listo -> /home/user/Optimizacion/resultados/torii_vangogh

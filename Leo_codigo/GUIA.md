@@ -1,5 +1,7 @@
 # Guía: Algoritmo evolutivo para pintar estilo Van Gogh
 
+> **Nota (noviembre 2026):** esta es la primera versión del AG. El código principal ahora es `pintor_evolutivo/pintor_evolutivo.py`, que combina este AG con las clases de Angie. Ver `DOCUMENTACION.md` en la raíz.
+
 ## 1. ¿Dónde estaba el equipo?
 | Código | Qué hace | Qué falta / problemas |
 |---|---|---|

@@ -1,2 +1,5 @@
 numpy==2.5.4
 pillow==13.0.0
+# Opcionales: graficas de convergencia y notebook
+matplotlib>=3.8
+notebook>=7.0
