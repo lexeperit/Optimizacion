@@ -52,7 +52,7 @@ def pincel_coverage(hedge_array, array_tmp):
     hedge_array[filas, columnas] = 1
     
 def generate_img(cromosome, img_evol, hedge_array, img_shape_x, img_shape_y):
-    for i in range(len(list_pincelada)):
+    for i in range(len(cromosome)):  # CORREGIDO: antes usaba la variable global list_pincelada
         draw_pincelada(cromosome[i], img_evol, hedge_array, img_shape_x, img_shape_y)
 
 
@@ -72,7 +72,7 @@ def oo_mse(img_orignal, img_offpring, hedge_array):
     #print(e_contenido)
     return e_contenido
 
-with Image.open("roger.jpg") as img:
+with Image.open("../Angie_codigo/vanGogh2.jpeg") as img:  # CORREGIDO: roger.jpg no esta en el repositorio
     #img.show()
     img_RGB = img.convert("RGB")
     img_width = img.width
@@ -99,6 +99,7 @@ for i in range(number_imagenes):
     fitness.append(value)
 
 best_option = cromosome[fitness.index(min(fitness))]
+img_evol = Image.new("RGB", [img_width, img_height])  # CORREGIDO: lienzo limpio para dibujar al mejor
 generate_img(best_option, img_evol, [],img_array.shape[1], img_array.shape[0])
 img_evol.show()
 
