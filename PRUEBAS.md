@@ -76,3 +76,24 @@ Conclusiones:
 - Las diferencias de PSNR son chicas (menos de 0.5 dB). A la vista, las variantes medianas y cortas muestran mejor la forma del arco (travesaño superior y columnas).
 - Las cortas tienen menor PSNR porque necesitan más generaciones, como ya se vio en la fase 2.
 - Menos arcos y con menos apertura quita remolinos encima de las columnas y mejora un poco la fidelidad.
+
+## Estilo contra *La noche estrellada* (medida simple, `medida_estilo.py`)
+
+Estilo = 1 − distancia(salida, pintura) / distancia(foto, pintura). 0% = igual que la foto, 100% = igual que la pintura.
+La distancia es el promedio de tres componentes: paleta (histograma HSV), fuerza de bordes y coherencia de la orientación.
+Todas con la configuración "medianas" de Van Gogh y 1000 generaciones.
+
+| Variante | Estilo total | Estilo del trazo (sin color) | Color | Bordes | Coherencia | PSNR vs foto | Tiempo* |
+|---|---|---|---|---|---|---|---|
+| Base fase 3 | −20.6% | −43.2% | 0.29 | 0.36 | 0.80 | 14.7 dB | 11 min |
+| T1: paleta de la noche estrellada | −39.4% | −64.1% | 0.17 | 0.31 | 0.73 | 14.5 dB | 13 min |
+| **T2: cerdas en cada pincelada** | **+12.5%** | 27.4% | 0.30 | 0.74 | 0.84 | **14.2 dB** | 21 min |
+| T3: paleta + cerdas | +5.9% | 28.4% | 0.21 | 0.71 | 0.87 | 13.9 dB | 21 min |
+| T4: paleta + cerdas + estilo en el fitness (w = 0.1) | +14.9% | 43.1% | 0.24 | 0.73 | 0.94 | 13.8 dB | 28 min |
+
+\*Con 4 corridas a la vez.
+
+- La salida de la fase 3 está **por debajo de la foto**: el 71% de sus píxeles no tiene borde porque cada pincelada es de un solo color. En la pintura real solo el 10% es plano.
+- Las **cerdas** (dos líneas delgadas, una más clara y otra más oscura, dentro de cada trazo) son el cambio que más ayuda: los bordes pasan de 0.36 a 0.74 y el parecido con la foto casi no baja.
+- La **paleta** de la noche estrellada vuelve amarillos los arcos rojos y además baja el parecido de color, porque la pintura es casi toda azul y la foto no.
+- **Techo de la medida:** si se conservan los colores de la foto, aunque bordes y coherencia fueran perfectos, el estilo total no pasa de **~46%**. Con una transferencia simple de color (media y desviación de cada canal) llega a ~48%. Para llegar a 80% la imagen tendría que tener la distribución de color de la noche estrellada, o sea, dejar de verse como los arcos.
