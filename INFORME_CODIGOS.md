@@ -108,9 +108,9 @@ Ninguno de los dos tiene todavía la parte **evolutiva**: crean la población al
 | 13 | `generate_Random_Pincelada` | `random_Value_In_Range(self.min_size, self.min_size)` | El tamaño siempre era `min_size`: `max_size` nunca se usaba | `(self.min_size, self.max_size)` |
 | 14 | `random_Color` | `y = random.randint(0, img_width-1)` | La `y` debe ir hasta la altura. Con imágenes horizontales se sale del arreglo (`IndexError`); con esta imagen vertical solo nunca toma colores de la parte de abajo | `img_height-1` |
 | 15 | `random_Points` | Con ángulos > 90° el `x_length` es **negativo** (y con > 180° también `y_length`) | El rango de `randint` queda mal y el segundo punto puede salir de la imagen | Se usa `abs(x_length)` y `abs(y_length)` |
-| 16 | `random_Start_End` | `% 359` | Un círculo tiene 360°: el ángulo 359 nunca aparecía y los demás se desfasaban | `% 360` |
 
 ### 3.3 Observaciones que no impiden correr (no se cambiaron)
+- **`% 359` en `random_Start_End`**: se deja así por decisión de Angie (360° equivale a 0°). Nota: `% 360` da valores de 0 a 359 y nunca llega a 360, así que con `% 359` lo único que cambia es que el ángulo 359° no aparece. En la práctica la diferencia es de un grado.
 - **`hedge_lambda = 0`**: con λ = 0 el término de cobertura desaparece y solo se mide el error donde se pintó. El algoritmo preferiría imágenes con **pocas** pinceladas bien coloreadas. Leo usa 0.2. Es una decisión de diseño que el equipo debe tomar.
 - **`random_Color` toma un píxel cualquiera** de la imagen, no el píxel donde cae la pincelada. Leo sí lo toma en la posición, y eso da imágenes mucho más parecidas desde el inicio.
 - `parametros_chromosomas` (en `AlgoritmoEvolutivo`) se define pero **no se usa**. Los rangos que se aplican son los del `Pincelada_Randomizer`.
