@@ -97,3 +97,16 @@ Todas con la configuración "medianas" de Van Gogh y 1000 generaciones.
 - Las **cerdas** (dos líneas delgadas, una más clara y otra más oscura, dentro de cada trazo) son el cambio que más ayuda: los bordes pasan de 0.36 a 0.74 y el parecido con la foto casi no baja.
 - La **paleta** de la noche estrellada vuelve amarillos los arcos rojos y además baja el parecido de color, porque la pintura es casi toda azul y la foto no.
 - **Techo de la medida:** si se conservan los colores de la foto, aunque bordes y coherencia fueran perfectos, el estilo total no pasa de **~46%**. Con una transferencia simple de color (media y desviación de cada canal) llega a ~48%. Para llegar a 80% la imagen tendría que tener la distribución de color de la noche estrellada, o sea, dejar de verse como los arcos.
+
+## Fase 4 Monet: reproducir *El puente japonés* (`fase4_monet.py`, 2500 pinceladas, 1000 generaciones)
+
+| Variante | Fitness final | PSNR vs pintura | Color | Bordes | Coherencia | Tiempo* |
+|---|---|---|---|---|---|---|
+| Sin cerdas | 0.0182 | 17.5 dB | 0.89 | 0.42 | 0.81 | 3.3 min |
+| Con cerdas | 0.0216 | 16.7 dB | 0.91 | 0.79 | 0.89 | 8.0 min |
+
+\*Con 2 corridas a la vez.
+
+- La paleta queda muy parecida a la pintura (0.9) en las dos variantes.
+- Las cerdas casi duplican el parecido de bordes (0.42 → 0.79), pero bajan un poco el PSNR y, en toques tan cortos, se ven como rayas.
+- En ninguna de las dos se distingue el puente: los toques (12–22 px de largo, 10–16 de grosor) son demasiado gruesos para sus barandales a 400 px.
