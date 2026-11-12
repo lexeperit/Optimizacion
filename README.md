@@ -1,6 +1,6 @@
 # Optimizacion
 
-Rama `claude/codigos-angie-leo`: los códigos de Angie y Leo corregidos y la **fase 1** del algoritmo evolutivo.
+Rama `claude/codigos-angie-leo`: los códigos de Angie y Leo corregidos y las fases 1, 2 y 3 del algoritmo evolutivo.
 El análisis de los códigos originales está en [`INFORME_CODIGOS.md`](INFORME_CODIGOS.md).
 
 ## Archivos
@@ -11,7 +11,10 @@ El análisis de los códigos originales está en [`INFORME_CODIGOS.md`](INFORME_
 | `vanGogh_evolutivo.py` | Fase 1: algoritmo evolutivo (script) |
 | `vanGogh_evolutivo.ipynb` | Fase 1: el mismo código, por celdas |
 | `vanGogh_evolutivo_fase2.py` / `.ipynb` | Fase 2: fase 1 + fusión de pinceladas |
-| `PRUEBAS.md` | Resultados de las pruebas de las fases 1 y 2 |
+| `fase3_vangogh.py` / `.ipynb` | Fase 3: fase 2 + estilo Van Gogh (pinceladas, imagen objetivo y dirección del contorno) |
+| `fase3_monet.py` / `.ipynb` | Fase 3: fase 2 + estilo Monet (pinceladas e imagen objetivo, sin fusión) |
+| `imagenes/torii.jpg` | Imagen de entrada de la fase 3 (arcos japoneses) |
+| `PRUEBAS.md` | Resultados de las pruebas |
 
 ## Cómo correrlos
 Requisitos: Python 3 y `pip install numpy pillow matplotlib notebook`.
@@ -28,6 +31,10 @@ jupyter notebook "pincelada y randomizer.ipynb"
 python vanGogh_evolutivo.py
 jupyter notebook vanGogh_evolutivo.ipynb
 python vanGogh_evolutivo_fase2.py
+python fase3_vangogh.py
+python fase3_monet.py
 ```
-Cada fase guarda la mejor imagen cada 10 generaciones y la gráfica del fitness en `resultados_fase1/` o `resultados_fase2/`.
+Las fases 1 y 2 guardan la mejor imagen cada 10 generaciones y la gráfica del fitness en `resultados_fase1/` o `resultados_fase2/`.
+La fase 3 guarda cada 50 generaciones (`cada_cuanto`) en `resultados_fase3_vangogh/` o `resultados_fase3_monet/`, junto con la imagen objetivo, `resultado.png` y `fitness.png`; al final imprime la medición del estilo. La carpeta se cambia en `carpeta_salida`.
+Los dos estilos se pueden correr al mismo tiempo en dos terminales.
 Los parámetros se cambian al inicio del archivo (en el notebook, en la segunda celda).

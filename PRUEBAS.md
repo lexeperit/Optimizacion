@@ -42,3 +42,21 @@ Conclusiones:
 - **Más generaciones ayudan cuando ya hay suficientes pinceladas**: con 1000, pasar de 300 a 1000 generaciones sube de 14.6 a 16.9 dB y la curva todavía no se aplana.
 - **Más población no mejoró** en las mismas generaciones, y el tiempo crece en proporción.
 - **Las pinceladas chicas todavía no convienen**: con 2000 pinceladas chicas y 1000 generaciones quedó peor que con 1000 normales. Necesitan muchas más generaciones.
+
+## Fase 3: estilos (imagen `imagenes/torii.jpg` reducida a 400 px de ancho, semilla 1)
+
+| | Van Gogh (`fase3_vangogh.py`) | Monet (`fase3_monet.py`) |
+|---|---|---|
+| Pinceladas / generaciones | 1000 / 1000 | 2500 / 1000 |
+| Fitness inicial → final | 0.0871 → 0.0387 | 0.0479 → 0.0209 |
+| PSNR contra su imagen objetivo | 14.0 dB | 16.4 dB |
+| Largo promedio | 75 px | 17 px |
+| Arcos | 56.6% | 8.2% |
+| Líneas que siguen el contorno (±20°) | 99.5% | 21.5% (lo que daría el azar) |
+| Saturación promedio (foto: 75) | 106.8 | 72.1 |
+| Fusiones aceptadas | 830 de 4470 | — (apagada) |
+| Tiempo en este entorno | 10.4 min | 3.6 min |
+
+- En Van Gogh el 99.5% de líneas siguiendo el contorno es por construcción (el randomizer las genera así). Lo útil es compararlo contra Monet, donde la orientación es libre.
+- Monet tiene mejor PSNR porque su objetivo está desenfocado (menos detalle que reproducir) y sus trazos son chicos.
+- En Van Gogh se aceptan menos fusiones que en la fase 2 (19% contra 58%): los trazos largos y curvos casi nunca quedan con los dos extremos a menos de 25 px.
