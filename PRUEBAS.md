@@ -60,3 +60,19 @@ Conclusiones:
 - En Van Gogh el 99.5% de líneas siguiendo el contorno es por construcción (el randomizer las genera así). Lo útil es compararlo contra Monet, donde la orientación es libre.
 - Monet tiene mejor PSNR porque su objetivo está desenfocado (menos detalle que reproducir) y sus trazos son chicos.
 - En Van Gogh se aceptan menos fusiones que en la fase 2 (19% contra 58%): los trazos largos y curvos casi nunca quedan con los dos extremos a menos de 25 px.
+
+### Van Gogh más fiel (1000 generaciones, semilla 1)
+
+| Variante | Pinceladas | Largo | Grosor | Arcos | Apertura arcos | PSNR | Largo prom. | Tiempo* |
+|---|---|---|---|---|---|---|---|---|
+| Original de la fase 3 | 1000 | 60–90 | 10–16 | 60% | 60–180 | 14.0 dB | 75 px | 10.4 min |
+| Igual, menos arcos | 1000 | 60–90 | 10–16 | 30% | 40–120 | 14.3 dB | 76 px | 8.7 min |
+| **Medianas** | 1500 | 40–60 | 8–14 | 40% | 40–120 | **14.4 dB** | 50 px | 11.2 min |
+| Cortas, menos arcos | 1500 | 30–50 | 8–12 | 30% | 40–120 | 13.7 dB | 40 px | 10.5 min |
+| Cortas | 1500 | 30–50 | 8–12 | 60% | 60–180 | 13.3 dB | 40 px | 11.7 min |
+
+\*Con 4 corridas a la vez. Con 1500 pinceladas se usó `prob_mutation = 0.002`.
+
+- Las diferencias de PSNR son chicas (menos de 0.5 dB). A la vista, las variantes medianas y cortas muestran mejor la forma del arco (travesaño superior y columnas).
+- Las cortas tienen menor PSNR porque necesitan más generaciones, como ya se vio en la fase 2.
+- Menos arcos y con menos apertura quita remolinos encima de las columnas y mejora un poco la fidelidad.
